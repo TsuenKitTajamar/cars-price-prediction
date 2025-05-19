@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Predicción de Precio de Coche</title>
+</head>
+<body>
+  <h2>Formulario de Predicción</h2>
+  <form method="POST">
+    <label>Marca:
+      <select name="marca" required>
+        <option value="Audi">Audi</option>
+      </select>
+    </label><br>
+
+    <label>Modelo:
+      <select name="modelo" required>
+        <option value="A1">A1</option>
+      </select>
+    </label><br>
+
+    <label>Versión:
+      <select name="version" required>
+        <option value="A1 1.0 TFSI design">A1 1.0 TFSI design</option>
+        <option value="A1 1.0 TFSI design S-tronic">A1 1.0 TFSI design S-tronic</option>
+        <option value="A1 1.4 TDI Adrenalin">A1 1.4 TDI Adrenalin</option>
+        <option value="A1 1.4 TDI Adrenalin S-tronic">A1 1.4 TDI Adrenalin S-tronic</option>
+        <option value="A1 1.4 TDI Adrenalin2">A1 1.4 TDI Adrenalin2</option>
+      </select>
+    </label><br>
+
+    <label>Año Inicio: <input type="number" name="startYear" value="2015" required></label><br>
+    <label>Año Fin: <input type="number" name="endYear" value="2018" required></label><br>
+
+    <label>Cilindrada:
+      <select name="cilindrada" required>
+        <option value="999">999</option>
+        <option value="1422">1422</option>
+      </select>
+    </label><br>
+
+    <label>CV:
+      <select name="cv" required>
+        <option value="90">90</option>
+        <option value="95">95</option>
+      </select>
+    </label><br>
+
+    <label>Carrocería:
+      <select name="id_carroceria" required>
+        <option value="Ber">Berlina</option>
+      </select>
+    </label><br>
+
+    <label>PF: <input type="number" name="pf" value="0" required></label><br>
+
+    <label>Puertas:
+      <select name="puertas" required>
+        <option value="3">3</option>
+      </select>
+    </label><br>
+
+    <label>Combustible:
+      <select name="id_combustible" required>
+        <option value="G">Gasolina</option>
+        <option value="D">Diésel</option>
+      </select>
+    </label><br>
+
+    <label>Matriculación:
+      <select name="matriculacion" required>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+      </select>
+    </label><br>
+
+    <label>Periodo Descripción:
+      <select name="periodoDescripcion" required>
+        <option value="4º trimestre">4º trimestre</option>
+      </select>
+    </label><br>
+
+    <label>Año:
+      <select name="Anno" required>
+        <option value="2017">2017</option>
+      </select>
+    </label><br>
+
+    <br>
+    <button type="submit">Predecir</button>
+  </form>
+
+  {% if prediction %}
+    <h3>Resultado:</h3>
+    <pre>{{ prediction }}</pre>
+  {% endif %}
+</body>
+</html>
